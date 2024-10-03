@@ -1,44 +1,3 @@
-<?php
-
-session_start();
-
-$conexao = mysqli_connect('localhost', 'root', '', 'tcc_luiz');
-
-if ($_POST) {
-
-    $email = $_POST['email'];
-
-    $senha = $_POST['senha'];
-
-    $sql = "SELECT * FROM usuario WHERE email='$email'";
-
-    $query = mysqli_query($conexao, $sql);
-
-    $usuario = $query->fetch_assoc();
-    $_SESSION['nivel'] = $usuario['nivel'];
-
-    
-    if ($conexao->error) {
-
-        echo "o erro foi" . $conexao->error;
-    } else {
-        $quantidade = $query->num_rows;
-        if ($quantidade == 0) {
-            echo "Email ou senha inválidos ! ";
-        } else {
-            $usuario = mysqli_fetch_assoc($query);
-            $_SESSION['usuario'][0] = $usuario['nome'];
-            if (password_verify($senha, $usuario['senha'])) {
-                header("location: usuario.php");
-            } else {
-                echo "Email ou senha inválidos ! ";
-            }
-        }
-    }
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -60,3 +19,19 @@ if ($_POST) {
 </body>
 
 </html>
+<?php
+require_once "../conecta.php";
+session_start();
+$email = $_POST['email'];
+$senha = $_POST['senha'];
+
+ $sql1 = "SELECT * FROM usuario WHERE email = '$email'";
+ $msqli = mysqli_query ($conexao,$sql);
+
+ if(){
+    
+ } 
+
+
+
+?>

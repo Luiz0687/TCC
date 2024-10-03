@@ -1,6 +1,5 @@
 <?php
-$conexao = mysqli_connect('localhost', 'root', '', 'tcc_luiz');
-
+require_once "../conecta.php";
 if ($_POST) {
 
     $nome = $_POST['nome'];
