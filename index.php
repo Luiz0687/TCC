@@ -15,7 +15,7 @@ if ($_POST) {
     //excutar o comando $sql_busca.
     $execucao = mysqli_query($conexao, $sql);
 
-    $dados = $execucao->fetch_assoc();
+    $dados = mysqli_fetch_assoc($execucao);
     $_SESSION['usuario_tipo'] = $dados['usuario_tipo'];
     $user = $dados['nome'];
     $_SESSION['nome'] = $user;

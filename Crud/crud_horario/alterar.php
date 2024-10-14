@@ -4,20 +4,18 @@
 require_once("../conecta.php");
 
 // receber os dados do formulário
-$id_usuario = $_GET['id_usuario'];
-$nome= $_GET['nome'];
-$email = $_GET['email'];
-$senha = $_GET['senha'];
-$usuario_tipo = $_GET['usuario_tipo'];
+$id_horario = $_GET['id_horario'];
+$data = $_GET['data'];
+$horaInicio = $_GET['horaInicio'];
+$horaFinal = $_GET['horaFinal'];
 
-
-$sql = "UPDATE usuario SET 
-nome = '$nome', email = '$email', senha = '$senha', usuario_tipo = $usuario_tipo WHERE id_usuario = $id_usuario";
+$sql = "UPDATE horario SET 
+data = '$data', horaInicio = $horaInicio, horaFinal = $horaFinal WHERE id_horario = $id_horario";
 mysqli_query($conexao,$sql);
 
 if ($conexao->error) {
 
-    die("Falha ao editar usuário no sistema:". $conexao->error);
+    die("Falha ao editar horario no sistema:". $conexao->error);
 
 }else {
     header("location: listar.php");

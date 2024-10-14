@@ -6,17 +6,14 @@ require_once "../conecta.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de usuario</title>
+    <title>Cadastro de horario</title>
 </head>
 <body>
     <form action="cadastrar.php" method="post">
-        <input type="text" name="nome" placeholder="informe seu nome" required><br><br>
-        <input type="email" name="email" placeholder="informe seu email" required><br><br>
-        <input type="password" name="senha" placeholder="informe sua senha" required><br><br>
-        <input type="number" name="usuario_tipo" placeholder="informe seu tipo de usuario" required><br><br>
+    Informe a data do projeto : <input type="date" name="data" required><br><br>
+    Informe o horario de inicio do projeto : <input type="text" name="horaInicial"required><br><br>
+    Informe o horario final do projeto : <input type="text" name="horaFinal" required><br><br>
         <input type="submit" value="cadastrar">
-        
-        
     </form>
 </body>
 </html>

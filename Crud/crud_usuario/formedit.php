@@ -34,14 +34,17 @@ $dados = mysqli_fetch_assoc($resultado);
 
     <h2>Editar cadastro</h2>
     <input type="hidden" name="id_usuario" value="<?php echo $dados['id_usuario'];?>">
+
     Edite seu nome
     <input  type="text" value="<?php echo $dados['nome'];?>" name="nome"/><br><br>
+
     Edite seu email
     <input  type="text" value="<?php echo $dados['email'];?>" name="email"/><br><br>
-    Edite sua senha
-    <input type="password" value="<?php echo $dados['senha'];?>" name="senha" id="senha"/><br><br>
-    Edite seu tipo de usuario
-    <input  type="text" value="<?php echo $dados['usuario_tipo'];?>" name="usuario_tipo"/><br><br>
+   
+    Edite seu tipo de usuario :<br><br>
+    <label>Professor<input  type="radio" value="1" name="usuario_tipo"/></label><br><br>
+    <label>Monitor<input  type="radio" value="2" name="usuario_tipo"/></label><br><br>
+    <label>Aluno<input  type="radio" value="3" name="usuario_tipo"/></label><br><br>
 
     <input type="submit" value="Editar"/>
 

@@ -27,6 +27,9 @@ if(!isset($_SESSION)){
    <a href="../Crud/crud_frequencia/">Crud frequencia</a><br><br>
    <a href="../Crud/crud_horario/">Crud horario</a><br><br>
    <a href="../Crud/crud_encontro/">Crud encontro</a><br><br>
+   <a href="../Crud/crud_usuario/designar.php">Designar monitor</a><br><br>
+   
+
 
     <a href="sair.php">Sair</a>
 
