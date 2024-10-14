@@ -8,23 +8,20 @@ if ($_POST) {
 
     $senha = $_POST['senha'];
 
-    $novaSenha = password_hash($senha, PASSWORD_ARGON2I);
+    $usuario_tipo = $_POST['usuario_tipo'];
+
+    //$novaSenha = password_hash($senha, PASSWORD_ARGON2I);
 
     $consultaEmail = mysqli_query($conexao, "SELECT COUNT(*) FROM usuario WHERE email = '$email'");
     $quantidadeEmail = mysqli_fetch_row($consultaEmail)[0];
 
     if ($quantidadeEmail == 0) {
-        $sql = "INSERT INTO usuario (senha,email,nome) VALUES('$novaSenha','$email','$nome')";
+        $sql = "INSERT INTO usuario (senha,email,nome,usuario_tipo) VALUES('$senha','$email','$nome',$usuario_tipo)";
         mysqli_query($conexao, $sql);
         header("location:../index.php");
     } else {
         echo "Esse Email já existe ! ";
     }
-
-    $sql = "INSERT INTO usuario (nome,senha,email) VALUES('$nome','$novaSenha','$email')";
-
-    mysqli_query($conexao, $sql);
-
 }
 
 ?>
@@ -40,6 +37,7 @@ if ($_POST) {
 <body>
     <h1> Cadastre-se </h1>
     <form action="" method="post">
+    <input type="hidden" name="usuario_tipo" value="3">
         Nome do usuário :<input type="text" name="nome" id="nome" required> <br><br>
         Email :<input type="email" name="email" id="email" required><br><br>
         Senha :<input type="password" name="senha" id="senha" required><br><br>

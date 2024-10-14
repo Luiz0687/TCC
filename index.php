@@ -7,7 +7,7 @@ if ($_POST) {
 
     $email = $_POST['email'];
     $senha = $_POST['senha'];
-    
+
 
     //verificar se o email existe no banco de dados.
     $sql = "SELECT * FROM usuario WHERE email = '$email'";
@@ -15,7 +15,29 @@ if ($_POST) {
     //excutar o comando $sql_busca.
     $execucao = mysqli_query($conexao, $sql);
 
-    $quantidade = $execucao->num_rows;
+    $dados = $execucao->fetch_assoc();
+    $_SESSION['usuario_tipo'] = $dados['usuario_tipo'];
+    $user = $dados['nome'];
+    $_SESSION['nome'] = $user;
+
+
+
+    if ($senha == $dados['senha']) {
+        header('location: login/redire.php');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    /*   $quantidade = $execucao->num_rows;
 
     if ($quantidade == 0) {
 
@@ -32,7 +54,7 @@ if ($_POST) {
             
             echo "A senha não confere";
         }
-    }
+    } */
 }
 ?>
 
