@@ -10,13 +10,13 @@ require_once "../conecta.php";
 </head>
 <body>
     <form action="cadastrar.php" method="post">
-        <input type="text" name="nome" placeholder="informe seu nome" required><br><br>
-        <input type="email" name="email" placeholder="informe seu email" required><br><br>
-        <input type="password" name="senha" placeholder="informe sua senha" required><br><br>
-        <input type="number" name="usuario_tipo" placeholder="informe seu tipo de usuario" required><br><br>
+    Insira seu nome : <input type="text" name="nome"required><br><br>
+    Informe seu email : <input type="email" name="email" required><br><br>
+    Informe sua senha : <input type="password" name="senha" required><br><br>
+    Informe seu tipo de usuario : <input type="number" name="usuario_tipo"  required><br><br>
         <input type="submit" value="cadastrar">
         
-        
+
     </form>
 </body>
 </html>

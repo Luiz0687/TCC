@@ -8,7 +8,7 @@ require_once("../conecta.php");
 
 
 // Seleciona os dados do usuário da tabela
-$sql = "SELECT * FROM usuario";
+$sql = "SELECT * FROM horario";
 
 // Executa o Select
 $resultado = mysqli_query($conexao,$sql);
@@ -25,7 +25,7 @@ $dados = mysqli_fetch_assoc($resultado);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar cadastro</title>
+    <title>Editar horario</title>
     
 </head>
 <body>

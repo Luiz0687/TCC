@@ -9,7 +9,7 @@ require_once("../conecta.php");
     <title>Crud</title>
 </head>
 <b>
-    <h1>Página Inicial do Crud</h1><br>
+    <h1>Crud Projeto</h1><br>
     <a href="formcad.php">Cadastrar</a><br>
    
     <a href="listar.php">Listar</a><br>

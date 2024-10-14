@@ -10,7 +10,7 @@ require_once "../conecta.php";
 </head>
 <body>
     <form action="cadastrar.php" method="post">
-        <input type="text" name="nome" placeholder="informe o nome do projeto" required><br><br>
+    Informe o nome do projeto : <input type="text" name="nome"required><br><br>
         <input type="submit" value="cadastrar">
     </form>
 </body>

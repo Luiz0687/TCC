@@ -12,18 +12,18 @@ if ($_POST) {
 
     $consultaEmail = mysqli_query($conexao, "SELECT COUNT(*) FROM usuario WHERE email = '$email'");
     $quantidadeEmail = mysqli_fetch_row($consultaEmail)[0];
-
     if ($quantidadeEmail == 0) {
         $sql = "INSERT INTO usuario (senha,email,nome) VALUES('$novaSenha','$email','$nome')";
         mysqli_query($conexao, $sql);
-        header("location:../index.php");
+        header("location: index.php");
     } else {
         echo "Esse Email já existe ! ";
     }
 
-    $sql = "INSERT INTO usuario (nome,senha,email) VALUES('$nome','$novaSenha','$email')";
+    // $sql = "INSERT INTO usuario (nome,senha,email) VALUES('$nome','$novaSenha','$email')";
 
-    mysqli_query($conexao, $sql);
+    //mysqli_query($conexao, $sql);
+    //header("location:index.php");
 
 }
 
